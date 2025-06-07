@@ -29,16 +29,17 @@ def run_simulation(c):
     from code.simulation import simulation
     simulation(output_dir)
 
-@task
-def run(c):
+@task(pre=[run_simulation])
+def run_figure(c):
     """
-    Re-run all notebooks.
+    Generate figures from the simulation output using a notebook.
     """
     from airoh.utils import run_figures, ensure_dir_exist
     notebooks_dir = Path(c.config.get("notebooks_dir"))
-    output_dir = Path(c.config.get("output_data_dir"))
+    output_dir = Path(c.config.get("output_data_dir")).resolve()
+    env = {**os.environ, "OUTPUT_DIR": str(output_dir)}
     ensure_dir_exist(c, "output_data_dir")
-    run_figures(c, notebooks_dir, output_dir)
+    run_figures(c, notebooks_dir, output_dir, env=env)
 
 @task
 def clean(c):
