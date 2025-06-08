@@ -3,8 +3,10 @@
 Once the pipeline is run, this folder will contain the following:
 
 - `simulation_output.csv` — simulated data table with random values.
+- `scatter.png` — a plot of the simulated data.
+- `authors.csv` — a list of authors from papers found in a spreadsheet retrieved from figshare.
 
-📝 Note: This folder is **ignored by Git** (`.gitignore`), so outputs won't be tracked by default.
+📝 Note: csv and png files in this folder are **ignored by Git** (see `.gitignore`), so outputs won't be tracked by default.
 
 💡 If you need to track large or versioned outputs, consider using [DataLad](https://www.datalad.org/) instead.
 

@@ -4,22 +4,22 @@ _why don't you have a cup of relaxing jasmine tea?_
 
 This repository provides a minimal, modular, and **fully reproducible** template for scientific workflows. Built on the [`invoke`](https://www.pyinvoke.org/) task runner, [datalad](https://www.datalad.org/) for data management as well as containerization tools (Docker or Apptainer), it lets you go from clean clone to output figures with just a few commands.
 
+The logic is powered by [`airoh`](https://pypi.org/project/airoh/), a lightweight, pip-installable Python package of reusable `invoke` tasks. This repository runs small analyses just to demonstrate how the `airoh-template` works. It should be easy to adapt to a variety of other projects.
+
 ⚠️ **Status**: This template is in its early days. Expect rapid iteration and changes.
-> ✨ TL;DR:
-> 
-> 🧪 This repository is a [GitHub template](https://github.com/airoh-pipeline/airoh-template/generate). Click **“Use this template”** to create your own analysis project.
->
-> ```bash
-> pip install -r setup.txt
-> invoke setup
-> invoke fetch
-> invoke run
-> ```
-> Voilà — from clone to full reproduction.
 
-The logic is powered by [`airoh`](https://pypi.org/project/airoh/), a lightweight, pip-installable Python package of reusable `invoke` tasks.
+---
 
-> 🧠 **Background**: This repository runs small analyses just to demonstrate how the `airoh-template` works. It should be easy to adapt to a variety of other projects.
+## ✨ TL;DR:
+
+This repository is a [GitHub template](https://github.com/airoh-pipeline/airoh-template/generate). Click **“Use this template”** to create your own analysis project.
+```bash
+pip install -r setup.txt
+invoke setup
+invoke fetch
+invoke run
+```
+Voilà — from clone to full reproduction.
 
 ---
 
