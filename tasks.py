@@ -40,14 +40,8 @@ def run_figure(c):
     output_dir = Path(c.config.get("output_data_dir")).resolve()
     source_dir = Path(c.config.get("source_data_dir")).resolve()
 
-    env = {
-        **os.environ,
-        "OUTPUT_DIR": str(output_dir),
-        "SOURCE_DATA_DIR": str(source_dir),
-    }
-
     ensure_dir_exist(c, "output_data_dir")
-    run_figures(c, notebooks_dir, output_dir, env=env)
+    run_figures(c, notebooks_dir, output_dir, keys=["source_data_dir", "output_data_dir"])
 
 @task(pre=[run_simulation, run_figure])
 def run(c):
