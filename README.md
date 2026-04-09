@@ -25,25 +25,23 @@ Voilà — from clone to full reproduction.
 
 ## 🚀 Quick Start
 
-### **Step 1**: Install `invoke` and clone core airoh dependencies
-
-```
-bash
-pip install -r setup.txt
-```
-
----
-
-
 ### **Step 1**: Setup the project dependencies
 
+If you are using `pip`, for instance in a virtual environment:
 ```
 bash
 pip install -r setup.txt
 invoke setup
 ```
-The initial call to `pip`is for core `airod` dependencies. The call to `invoke run` uses `pip install` under the hood with the provided requirements file, but that step can be made much more complex in `tasks.py`. 
+The initial call to `pip`is for core `airod` dependencies. The call to `invoke run` uses `pip install` under the hood with the provided requirements file, but that step can be made much more complex in `tasks.py`.
 
+If you are using `conda`:
+```
+bash
+conda env create -n airoh_env -f environment.yml
+conda activate airoh_env
+invoke setup
+```
 ---
 
 
@@ -84,7 +82,7 @@ This will save your image to a `.tar.gz` archive that can later be loaded with `
 
 ```
 bash
-invoke docker-setup 
+invoke docker-setup
 ```
 Note that the name of the docker image is configured through `invoke.yml`.
 
@@ -202,7 +200,7 @@ Use `invoke --list` or `invoke --help <task>` for descriptions and usage.
 - Build: invoke docker-build
 - Archive: invoke docker-archive
 - Run: invoke docker-run --task run
-- Setup from archive: invoke docker-setup 
+- Setup from archive: invoke docker-setup
 
 ---
 
@@ -215,4 +213,3 @@ Submit an issue or PR on [`airoh`](https://github.com/SIMEXP/airoh).
 ## Philosophy
 
 Inspired by Uncle Iroh from *Avatar: The Last Airbender*, `airoh` aims to bring simplicity, reusability, and clarity to research infrastructure — one well-structured task at a time. It is meant to support a concrete implementation of the [YODA principles](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html).
-
