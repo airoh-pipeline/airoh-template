@@ -34,6 +34,20 @@ pip install -r setup.txt
 
 ---
 
+
+### **Step 1**: Setup the project dependencies
+
+```
+bash
+pip install -r setup.txt
+invoke setup
+```
+The initial call to `pip`is for core `airod` dependencies. The call to `invoke run` uses `pip install` under the hood with the provided requirements file, but that step can be made much more complex in `tasks.py`. 
+
+---
+
+
+---
 ### **Step 2**: Fetch the source data
 
 ```
